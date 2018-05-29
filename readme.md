@@ -1,3 +1,6 @@
+ - 安装Django
+```sudo pip3 install Django```
+
  - 运行程序
 ```python manage.py runserver```
  - 创建表
@@ -20,3 +23,9 @@
 1. 编辑 models.py 文件，改变模型。
 2. 运行 python manage.py makemigrations 为模型的改变生成迁移文件。
 3. 运行 python manage.py migrate 来应用数据库迁移。
+
+## 安装mysqlclient-python
+
+1. 环境变量```export PATH=$PATH:/usr/local/mysql/bin```
+2. Download source by git clone git@github.com:PyMySQL/mysqlclient-python.git
+3. python3 setup.py install
