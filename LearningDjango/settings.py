@@ -32,12 +32,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin', # 管理员站点
-    'django.contrib.auth', # 认证授权系统
-    'django.contrib.contenttypes', # 内容类型框架
-    'django.contrib.sessions', # 会话框架
-    'django.contrib.messages', # 消息框架
-    'django.contrib.staticfiles', # 管理静态文件的框架
+    'django.contrib.admin',  # 管理员站点
+    'django.contrib.auth',  # 认证授权系统
+    'django.contrib.contenttypes',  # 内容类型框架
+    'django.contrib.sessions',  # 会话框架
+    'django.contrib.messages',  # 消息框架
+    'django.contrib.staticfiles',  # 管理静态文件的框架
     'TestModel',
 ]
 
@@ -56,8 +56,8 @@ ROOT_URLCONF = 'LearningDjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR+"/templates",],
-        'APP_DIRS': True, # 这一选项将会让DjangoTemplates在每个INSTALLED_APPS文件夹中寻找“templates”子目录
+        'DIRS': [BASE_DIR+"/templates", ],
+        'APP_DIRS': True,  # 这一选项将会让DjangoTemplates在每个INSTALLED_APPS文件夹中寻找“templates”子目录
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -77,14 +77,17 @@ WSGI_APPLICATION = 'LearningDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'django.db.backends.sqlite3'，'django.db.backends.postgresql'，'django.db.backends.mysql'，或 'django.db.backends.oracle'
+        # 'django.db.backends.sqlite3'
+        # 'django.db.backends.postgresql'
+        # 'django.db.backends.mysql'
+        # 'django.db.backends.oracle'
         'ENGINE': 'django.db.backends.mysql',
         # 数据库名称
         'NAME': 'LearningGo',
-	'USER': 'root',
-	'PASSWORD': '88888888',
-	'HOST': 'localhost',
-	'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': '88888888',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
