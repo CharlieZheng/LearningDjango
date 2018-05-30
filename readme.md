@@ -71,3 +71,7 @@ Visual Studio Code
  - 运行自动化测试
 
 ```python manage.py test TestModel```
+
+## 样式等静态文件
+使用STATICFILES_FINDERS设置查找器
+AppDirectoriesFinder查找器实现了一种简单引用模板路径的方式

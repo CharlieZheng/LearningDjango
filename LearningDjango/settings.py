@@ -52,7 +52,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'LearningDjango.urls'
-
+STATICFILES_FINDERS = ("django.contrib.staticfiles.finders.FileSystemFinder",
+                       "django.contrib.staticfiles.finders.AppDirectoriesFinder",)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
