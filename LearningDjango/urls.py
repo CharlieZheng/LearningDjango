@@ -19,7 +19,7 @@ from django.conf.urls import url
 from . import view, testdb
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     # 函数include()允许引用其它URLconfs
     # path(route, view, kwargs?, name?)
     # 参数route：是url的一个正则式匹配，越严格的式子越靠前，跟Node.js里的Koa很像

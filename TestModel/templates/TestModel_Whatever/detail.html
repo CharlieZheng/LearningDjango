@@ -1,0 +1,14 @@
+<h1>{{question.question_text}}</h1>> {%if error_message%}
+<p>
+    <strong>{{error_message}}</strong>
+</p>
+{% endif%}
+<form action="{%url 'TestModelAppName:vote' question.id%}" method="POST">
+    <!-- 用来防御跨站点请求伪造 -->
+    {% csrf_token %} {% for item in question.choice_set.all %}
+    <!-- input标签中name属性的意义是当表单提交时，发送给服务器的json格式为"{choice: 4}" -->
+    <input type="radio" name="choice" id="choice{{forloop.counter}}" value="{{item.id}}" />
+    <label for="choice{{forloop.counter}}">{{ item.choice_text }}</label>
+    <br/> {% endfor %}
+    <input type="submit" value="提交" />
+</form>

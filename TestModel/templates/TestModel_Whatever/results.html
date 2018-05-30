@@ -1,0 +1,10 @@
+<h1>{{question.question_text}}</h1>
+
+<ul>
+    {% for item in question.choice_set.all%}
+    <li>
+        {{item.choice_text}} -- {{item.votes}} vote {{item.votes|pluralize}}
+    </li>
+    {%endfor%}
+</ul>
+<a href="{%url 'TestModelAppName:detail' question.id%}">Vote again?</a>

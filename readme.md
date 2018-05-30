@@ -1,3 +1,9 @@
+本项目是根据(链接)[https://docs.djangoproject.com/zh-hans/2.0/intro/tutorial03/]而作的，其中TestModel对应教程中的polls，LearningDjango对应教程中的mysite
+
+ - 使用的编辑器
+
+Visual Studio Code
+
  - 安装Django
 ```sudo pip3 install Django```
 
