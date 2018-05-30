@@ -67,3 +67,7 @@ Visual Studio Code
 ```python manage.py createsuperuser```
  - Run server
 ```python manage.py runserver```
+
+ - 运行自动化测试
+
+```python manage.py test TestModel```
