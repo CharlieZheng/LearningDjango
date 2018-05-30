@@ -2,34 +2,26 @@
 """fuction docstring"""
 from django.http import   HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
-# from django.template import loader
 from django.urls import reverse
+from django.views import generic
 from .models import Choice, Question
 
 
-def index(request):
-    """fuction docstring"""
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    context = {'latest_question_list': latest_question_list, }
-    return render(request, 'TestModel_Whatever/index.html', context)
-    # template = loader.get_template('TestModel_Whatever/index.html')
-    # return HttpResponse(template.render(context, request))
-
-
-def detail(request, question_id):
-    """fuction docstring"""
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'TestModel_Whatever/detail.html', {'question': question})
-
-
-def results(request, question_id):
-    """fuction docstring"""
-    question = get_object_or_404(Question, pk=question_id)
-
-    return render(request, 'TestModel_Whatever/results.html', {'question': question})
-
-
-
+class IndexView(generic.ListView):
+    """View for index"""
+    template_name = 'TestModel_Whatever/index.html'
+    context_object_name = 'latest_question_list'
+    def get_queryset(self):
+        """Return the last five published questions."""
+        return Question.objects.order_by('-pub_date')[:5]
+class DetailView(generic.DetailView):
+    """View for detail"""
+    model = Question
+    template_name = 'TestModel_Whatever/detail.html'
+class ResultsView(generic.DetailView):
+    """View for results"""
+    model = Question
+    template_name = 'TestModel_Whatever/results.html'
 def vote(request, question_id):
     """fuction docstring"""
     question = get_object_or_404(Question, pk=question_id)
